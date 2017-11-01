@@ -2,11 +2,12 @@
 
 module.exports = function (environment) {
   'use strict';
-  const ENV = {
-    modulePrefix: 'av-capstone',
+  var ENV = {
+    modulePrefix: 'Capstone',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    apiHost: 'http://localhost:3000/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -49,7 +50,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/Capstone';
     ENV.locationType = 'hash';
+    ENV.apiHost = 'https://intense-harbor-78867.herokuapp.com/';
   }
 
   return ENV;
