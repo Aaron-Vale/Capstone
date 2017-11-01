@@ -11,6 +11,7 @@ export default Ember.Service.extend({
       data: {
         credentials: {
           email: credentials.email,
+          username: credentials.username,
           password: credentials.password,
           password_confirmation: credentials.passwordConfirmation,
         },
