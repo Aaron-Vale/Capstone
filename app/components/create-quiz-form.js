@@ -1,14 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  newQuiz: {
-    title: null,
-    category: null
-  },
+  newQuiz: {},
   actions: {
     createQuiz () {
       this.sendAction('createQuiz', this.get('newQuiz'));
-      this.set('newQuiz', null);
+      this.set('newQuiz.title', null);
+      this.set('newQuiz.category', null);
     }
   }
 });
