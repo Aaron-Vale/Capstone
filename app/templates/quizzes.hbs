@@ -7,6 +7,7 @@
       <td>Quiz Title</td>
       <td>Uploaded By</td>
       <td>Avatar</td>
+      <td>Options</td>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,11 @@
         <td>{{#link-to 'quiz' quiz}} {{quiz.title}} {{/link-to}}</td>
         <td>{{quiz.user.username}}</td>
         <td><img class="propic" src='{{quiz.user.propic}}'></td>
+        <td>
+          {{#if quiz.editable}}
+            {{delete-quiz-button quiz=quiz deleteQuiz='deleteQuiz'}}
+          {{/if}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
