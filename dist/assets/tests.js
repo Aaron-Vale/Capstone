@@ -99,6 +99,15 @@ define('Capstone/tests/components/sign-up-form.jshint.lint-test', [], function (
     assert.ok(true, 'components/sign-up-form.js should pass jshint.');
   });
 });
+define('Capstone/tests/components/username-input.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | components/username-input.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/username-input.js should pass jshint.');
+  });
+});
 define('Capstone/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
@@ -551,6 +560,53 @@ define('Capstone/tests/integration/components/sign-up-form-test.jshint.lint-test
     assert.ok(true, 'integration/components/sign-up-form-test.js should pass jshint.');
   });
 });
+define('Capstone/tests/integration/components/username-input-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('username-input', 'Integration | Component | username input', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': 'AUtNzKMq',
+      'block': '{"statements":[["append",["unknown",["username-input"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': 'l8pB8fK8',
+      'block': '{"statements":[["text","\\n"],["block",["username-input"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('Capstone/tests/integration/components/username-input-test.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | integration/components/username-input-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/username-input-test.js should pass jshint.');
+  });
+});
+define('Capstone/tests/models/quiz.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | models/quiz.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/quiz.js should pass jshint.');
+  });
+});
 define('Capstone/tests/models/user.jshint.lint-test', [], function () {
   'use strict';
 
@@ -594,6 +650,15 @@ define('Capstone/tests/routes/change-password.jshint.lint-test', [], function ()
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/change-password.js should pass jshint.');
+  });
+});
+define('Capstone/tests/routes/quizzes.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | routes/quizzes.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/quizzes.js should pass jshint.');
   });
 });
 define('Capstone/tests/routes/sign-in.jshint.lint-test', [], function () {
@@ -792,6 +857,28 @@ define('Capstone/tests/unit/models/auth-test.jshint.lint-test', [], function () 
     assert.ok(true, 'unit/models/auth-test.js should pass jshint.');
   });
 });
+define('Capstone/tests/unit/models/quiz-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('quiz', 'Unit | Model | quiz', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('Capstone/tests/unit/models/quiz-test.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | unit/models/quiz-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/quiz-test.js should pass jshint.');
+  });
+});
 define('Capstone/tests/unit/models/user-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForModel)('user', 'Unit | Model | user', {
@@ -855,6 +942,27 @@ define('Capstone/tests/unit/routes/change-password-test.jshint.lint-test', [], f
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/change-password-test.js should pass jshint.');
+  });
+});
+define('Capstone/tests/unit/routes/quizzes-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:quizzes', 'Unit | Route | quizzes', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('Capstone/tests/unit/routes/quizzes-test.jshint.lint-test', [], function () {
+  'use strict';
+
+  QUnit.module('JSHint | unit/routes/quizzes-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/quizzes-test.js should pass jshint.');
   });
 });
 define('Capstone/tests/unit/routes/sign-in-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

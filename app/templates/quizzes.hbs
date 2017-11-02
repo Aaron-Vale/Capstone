@@ -1,7 +1,22 @@
-<h2>Users</h2>
-
-<ul>
-{{#each model as |quiz|}}
-  <li>{{quiz.title}}</li>
-{{/each}}
-</ul>
+<h2>Quizzes</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Category</td>
+      <td>Quiz Title</td>
+      <td>Uploaded By</td>
+      <td>Avatar</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |quiz|}}
+    {{log model}}
+      <tr>
+        <td>{{quiz.category}}</td>
+        <td>{{quiz.title}}</td>
+        <td>{{quiz.user.username}}</td>
+        <td><img class="propic" src='{{quiz.user.propic}}'></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

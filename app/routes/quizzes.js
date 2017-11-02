@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model () {
-    this.get('store').findAll('quiz');
+    return this.get('store').findAll('quiz');
   }
 });
