@@ -1,10 +1,10 @@
 <form {{action 'createQuestion' on="submit"}}>
-  {{input type="text" placeholder="Question Name" value=newQuestion.title}}
-  {{input type="text" placeholder="Answer 1" value=newQuestion.answer1}}
-  {{input type="text" placeholder="Answer 2" value=newQuestion.answer2}}
-  {{input type="text" placeholder="Answer 3" value=newQuestion.answer3}}
-  {{input type="text" placeholder="Answer 4" value=newQuestion.answer4}}
-  {{input type="number" min="1" max="4" placeholder="Correct Response" value=newQuestion.correct}}
+  {{input class="input-small" type="text" placeholder="Question Name" value=newQuestion.title}}
+  {{input class="input-small" type="text" placeholder="Answer 1" value=newQuestion.answer1}}
+  {{input class="input-small" type="text" placeholder="Answer 2" value=newQuestion.answer2}}
+  {{input class="input-small" type="text" placeholder="Answer 3" value=newQuestion.answer3}}
+  {{input class="input-small" type="text" placeholder="Answer 4" value=newQuestion.answer4}}
+  {{input class="input-small" type="number" min="1" max="4" placeholder="Correct Response" value=newQuestion.correct}}
   <p>Enter the number of the correct answer (1, 2, 3, or 4).</p>
   <button class="btn btn-success" type="submit">Create Question </button>
 </form>

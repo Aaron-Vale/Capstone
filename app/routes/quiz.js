@@ -10,6 +10,11 @@ export default Ember.Route.extend({
       let newQuestion = this.get('store').createRecord('question', inputs);
       newQuestion.save();
       this.modelFor('quiz').reload();
+    },
+    editQuiz (newQuiz, quiz) {
+      quiz.set('title', newQuiz.title);
+      quiz.set('category', newQuiz.category);
+      quiz.save();
     }
   }
 });
