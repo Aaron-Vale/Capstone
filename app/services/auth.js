@@ -9,7 +9,7 @@ export default Ember.Service.extend({
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {
       data: {
-        credentials: {
+        user: {
           email: credentials.email,
           username: credentials.username,
           password: credentials.password,
@@ -22,7 +22,7 @@ export default Ember.Service.extend({
   signIn (credentials) {
     return this.get('ajax').post('/sign-in', {
       data: {
-        credentials: {
+        user: {
           email: credentials.email,
           password: credentials.password,
         },

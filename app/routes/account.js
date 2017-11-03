@@ -12,5 +12,15 @@ export default Ember.Route.extend({
       .danger('Unauthorized.');
       this.transitionTo('application');
     }
+  },
+  actions: {
+    updateUsername (credentials, user) {
+      console.log(credentials);
+      user.set('username', credentials.username);
+      user.save();
+      this.set('auth.credentials.username', credentials.username);
+      this.get('flashMessages')
+      .success('Username Updated!');
+    }
   }
 });
