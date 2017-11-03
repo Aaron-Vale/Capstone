@@ -17,10 +17,10 @@ export default Ember.Route.extend({
     updateUsername (credentials, user) {
       console.log(credentials);
       user.set('username', credentials.username);
-      user.save();
-      this.set('auth.credentials.username', credentials.username);
-      this.get('flashMessages')
-      .success('Username Updated!');
+      user.save()
+        .then(() => this.set('auth.credentials.username', credentials.username))
+        .then(() => this.get('flashMessages').success('Username Updated!'))
+        .catch(() => this.get('flashMessages').danger('Username already exists. Please try again.'))
     }
   }
 });
