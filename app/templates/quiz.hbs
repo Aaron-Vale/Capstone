@@ -7,4 +7,7 @@
 
 {{#each model.questions as |question|}}
   {{quiz-question question=question}}
+  {{#if model.editable}}
+    {{#link-to 'question' question}}Modify Question {{/link-to}}
+  {{/if}}
 {{/each}}
