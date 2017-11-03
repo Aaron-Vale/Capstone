@@ -1,3 +1,10 @@
+{{#if model.editable}}
+  <div class="add-questions">
+    <h1>This is your quiz! Add a Question:</h1>
+    {{create-question-form quiz=model.id createQuestion='createQuestion'}}
+  </div>
+{{/if}}
+
 {{#each model.questions as |question|}}
   {{quiz-question question=question}}
 {{/each}}

@@ -7,6 +7,5 @@ export default DS.Model.extend({
   answer3: DS.attr('string'),
   answer4: DS.attr('string'),
   correct: DS.attr('number'),
-  quiz_id: DS.attr('number'),
-  quiz: DS.belongsTo('quiz')
+  quiz_id: DS.attr('number')
 });
