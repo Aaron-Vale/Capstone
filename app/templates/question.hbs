@@ -1,2 +1,9 @@
-{{quiz-question question=model}}
+<h2>Title: {{model.title}} </h2>
+<p>Answer 1: {{model.answer1}} </p>
+<p>Answer 2: {{model.answer2}} </p>
+<p>Answer 3: {{model.answer3}} </p>
+<p>Answer 4: {{model.answer4}} </p>
+<p>Correct Response: {{model.correct}} </p>
 {{delete-question-button question=model deleteQuestion='deleteQuestion'}}
+
+{{edit-question-form question=model editQuestion='editQuestion'}}
