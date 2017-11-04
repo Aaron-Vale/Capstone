@@ -14,7 +14,7 @@
     {{#each model as |quiz|}}
       <tr>
         <td>{{quiz.category}}</td>
-        <td>{{#link-to 'quiz' quiz}} {{quiz.title}} {{/link-to}}</td>
+        <td>{{#link-to 'quiz' quiz.id}} {{quiz.title}} {{/link-to}}</td>
         <td>{{quiz.user.username}}</td>
         <td><img class="propic" src='{{quiz.user.propic}}'></td>
         <td>
