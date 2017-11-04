@@ -1,16 +1,16 @@
-<h1> {{model.category}}: {{model.title}} </h1>
-{{#if model.editable}}
+<h1> {{model.quiz.category}}: {{model.quiz.title}} </h1>
+{{#if model.quiz.editable}}
   <div class="quiz-edit">
     <h4>This is your quiz! Add a Question:</h4>
-    {{create-question-form quiz=model.id createQuestion='createQuestion'}}
+    {{create-question-form quiz=model.quiz.id createQuestion='createQuestion'}}
     <h4>Or, change the quiz title/category.</h4>
-    {{edit-quiz-form quiz=model editQuiz='editQuiz'}}
+    {{edit-quiz-form quiz=model.quiz editQuiz='editQuiz'}}
   </div>
 {{/if}}
 
-{{#each model.questions as |question|}}
-  {{quiz-question question=question}}
-  {{#if model.editable}}
+{{#each model.quiz.questions as |question|}}
+  {{quiz-question updateScore="updateScore" user=model.user question=question}}
+  {{#if model.quiz.editable}}
     {{#link-to 'question' question.id}}Modify Question {{/link-to}}
   {{/if}}
 {{/each}}

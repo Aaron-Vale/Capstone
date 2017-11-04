@@ -20,6 +20,7 @@ export default Ember.Component.extend({
           this.set('score', score + 5);
           this.set('isCorrect', true);
           this.set('isAnswered', true);
+          this.sendAction('updateScore', this.get('user'), this.get('score'));
         }
       } else { // if incorrect
         if (!this.get('isAnswered')) {
@@ -27,6 +28,7 @@ export default Ember.Component.extend({
           this.set('score', score - 5);
           this.set('isIncorrect', true);
           this.set('isAnswered', true);
+          this.sendAction('updateScore', this.get('user'), this.get('score'));
         }
       }
     }
