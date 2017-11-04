@@ -8,5 +8,6 @@ export default DS.Model.extend({
   answer4: DS.attr('string'),
   correct: DS.attr('number'),
   quiz_id: DS.attr('number'),
-  quiz: DS.attr()
+  quiz: DS.attr(),
+  points: DS.attr('number')
 });

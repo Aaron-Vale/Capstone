@@ -6,5 +6,7 @@
   {{input class="input-small" type="text" placeholder="Answer 4" value=newQuestion.answer4}}
   {{input class="input-small" type="number" min="1" max="4" placeholder="Correct Response" value=newQuestion.correct}}
   <p>Enter the number of the correct answer (1, 2, 3, or 4).</p>
-  <button class="btn btn-success" type="submit">Create Question </button>
+  {{input class="input-small" type="number" min="1" max="20" placeholder="Question Point Value" value=newQuestion.points}}
+  <p>Enter the number of points to be earned/lost from this question. </p>
+  <button class="btn btn-success" type="submit">Create Question</button>
 </form>

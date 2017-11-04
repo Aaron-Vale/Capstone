@@ -13,11 +13,12 @@ export default Ember.Component.extend({
   isIncorrect: false,
   actions: {
     checkAnswer () {
+      const points = this.get('question').points;
       // if correct
       if (this.get('question').correct === this.get('answer')) {
         if (!this.get('isAnswered')) { // if not already answered
           let score = this.get('score');
-          this.set('score', score + 5);
+          this.set('score', score + points);
           this.set('isCorrect', true);
           this.set('isAnswered', true);
           this.sendAction('updateScore', this.get('user'), this.get('score'));
@@ -25,7 +26,7 @@ export default Ember.Component.extend({
       } else { // if incorrect
         if (!this.get('isAnswered')) {
           let score = this.get('score');
-          this.set('score', score - 5);
+          this.set('score', score - points);
           this.set('isIncorrect', true);
           this.set('isAnswered', true);
           this.sendAction('updateScore', this.get('user'), this.get('score'));

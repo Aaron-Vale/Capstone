@@ -8,10 +8,11 @@ export default Ember.Component.extend({
     answer3: null,
     answer4: null,
     correct: null,
-    quiz_id: null
+    quiz_id: null,
+    points: null,
   },
   actions: {
-    createQuestion (params) {
+    createQuestion () {
       this.set('newQuestion.quiz_id', this.get('quiz'));
       this.sendAction('createQuestion', this.get('newQuestion'));
       this.set('newQuestion.title', null);
@@ -20,6 +21,7 @@ export default Ember.Component.extend({
       this.set('newQuestion.answer3', null);
       this.set('newQuestion.answer4', null);
       this.set('newQuestion.correct', null);
+      this.set('newQuestion.points', null);
     }
   }
 });
