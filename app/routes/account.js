@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
+  username: Ember.computed.alias('auth.credentials.username'),
   id: Ember.computed.alias('auth.credentials.id'),
   flashMessages: Ember.inject.service(),
   model (params) {

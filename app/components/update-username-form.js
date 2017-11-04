@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   actions: {
     updateUsername () {
       this.sendAction('updateUsername', this.get('credentials'), this.get('user'));
+      this.set('credentials.username', null);
     }
   }
 });

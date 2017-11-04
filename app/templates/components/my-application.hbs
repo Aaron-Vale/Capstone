@@ -13,7 +13,6 @@
         {{#if isAuthenticated}}
         <img class="propic" src={{propic}}>
         <li>Score: {{score}} </li>
-        <li>Username: {{username}} </li>
         <li>{{#link-to "account" id}}Account Settings {{/link-to}} </li>
         <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
         {{else}}
