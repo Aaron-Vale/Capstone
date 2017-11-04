@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Email</td>
+      <td>Username</td>
+      <td>Avatar</td>
+      <td>Score</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |user|}}
+    <tr>
+      <td> {{user.email}} </td>
+      <td> {{user.username}} </td>
+      <td><img class="propic" src='{{user.propic}}'></td>
+      <td> {{user.score}} </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -17,8 +17,6 @@ export default Ember.Component.extend({
       // if correct
       if (this.get('question').correct === this.get('answer')) {
         if (!this.get('isAnswered')) { // if not already answered
-          console.log(this.get('user').id);
-          console.log(this.get('quizAuthor'));
           if (!Number(this.get('user').id) === Number(this.get('quizAuthor'))) {
             let score = this.get('score');
             this.set('score', score + points);
