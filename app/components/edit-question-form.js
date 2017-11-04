@@ -11,7 +11,8 @@ export default Ember.Component.extend({
     answer3: null,
     answer4: null,
     correct: null,
-    quiz_id: null
+    quiz_id: null,
+    points: null,
   },
   actions: {
     editQuestion () {
@@ -25,6 +26,7 @@ export default Ember.Component.extend({
         this.set('newQuestion.answer3', null);
         this.set('newQuestion.answer4', null);
         this.set('newQuestion.correct', null);
+        this.set('newQuestion.points', null);
       } else {
         this.get('flashMessages')
         .danger('You are not the creator of this quiz, so you cannot edit the question.');

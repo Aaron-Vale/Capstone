@@ -17,6 +17,7 @@ export default Ember.Route.extend({
       question.set('answer3', newQuestion.answer3);
       question.set('answer4', newQuestion.answer4);
       question.set('correct', newQuestion.correct);
+      question.set('points', newQuestion.points);
       question.save();
     }
   }
