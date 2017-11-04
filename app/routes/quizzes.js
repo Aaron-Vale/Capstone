@@ -8,7 +8,6 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteQuiz (quiz) {
-      console.log(quiz);
       quiz.destroyRecord();
     }
   }

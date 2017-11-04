@@ -16,7 +16,6 @@ export default Ember.Route.extend({
   },
   actions: {
     updateUsername (credentials, user) {
-      console.log(credentials);
       user.set('username', credentials.username);
       user.save()
         .then(() => this.set('auth.credentials.username', credentials.username))
