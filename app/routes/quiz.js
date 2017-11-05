@@ -21,6 +21,7 @@ export default Ember.Route.extend({
       quiz.set('title', newQuiz.title);
       quiz.set('category', newQuiz.category);
       quiz.save();
+      this.modelFor('quizzes').reload();
     },
     updateScore (user, score) {
       user.set('score', score);

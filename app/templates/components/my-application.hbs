@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar">
   <div class="container-fluid">
     {{navbar-header}}
 
@@ -12,7 +12,6 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
         <img class="propic" src={{propic}}>
-        <li>Score: {{score}} </li>
         <li>{{#link-to "account" id}}Account Settings {{/link-to}} </li>
         <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
         {{else}}
@@ -31,3 +30,9 @@
 <div class="col-md-8 col-md-offset-2">
   {{outlet}}
 </div>
+
+<footer>
+  {{#if isAuthenticated}}
+    <p class="footer-text"> Username: {{username}} Score: {{score}}  </p>
+  {{/if}}
+</footer>

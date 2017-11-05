@@ -15,11 +15,13 @@
     {{content-for "head-footer"}}
   </head>
   <body class="container-fluid">
-    {{content-for "body"}}
+    <div id="mainContainer">
+      {{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/Capstone.js"></script>
+      <script src="{{rootURL}}assets/vendor.js"></script>
+      <script src="{{rootURL}}assets/Capstone.js"></script>
 
-    {{content-for "body-footer"}}
+      {{content-for "body-footer"}}
+    </div>
   </body>
 </html>

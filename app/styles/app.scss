@@ -1,8 +1,34 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+@import 'typography';
+@import 'colors';
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#mainContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.active {
+  background-color: $darkblue;
+}
 
 .answered {
   cursor: none;
+}
+
+body {
+  background-image: url(https://av-wdi-20.s3.amazonaws.com/filebucket/2017-11-05/7424d6a59ca96db3f3dc5fc8ae99f363.png);
+  background-size: cover;
+  overflow-y: scroll;
 }
 
 .centered {
@@ -21,9 +47,35 @@
   color: white;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $darkblue;
+    color: $white;
+    text-align: center;
+    height: 30px;
+}
 .input-small {
   display: inline;
   width: 200px;
+}
+
+.navbar {
+  background-color: $darkblue;
+  a {
+    color: $white;
+  }
+  a:hover {
+    background-color: lighten($darkblue, 20%) !important;
+  }
+  a:focus {
+    background-color: $darkblue !important;
+  }
+  button {
+    background-color: lighten($darkblue, 10%);
+  }
 }
 
 .propic {
@@ -31,6 +83,14 @@
   width: 50px;
 }
 
+table {
+  background-color: rgba(0,0,0, .1);
+}
+
 .quiz-edit {
-  background-color: yellow;
+  background-color: rgba(0,0,0, 0.1);
+}
+
+.user-info {
+  text-align: center;
 }

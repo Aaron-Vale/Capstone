@@ -1,5 +1,7 @@
 <h2>Quizzes</h2>
-<h3>Select a quiz to play or {{#link-to 'create-quiz'}}create your own{{/link-to}}!</h3>
+<h3>Select a quiz to play,
+  {{#link-to 'create-quiz'}}create your own{{/link-to}},
+  or try a <span><button {{action 'randomQuiz'}} class="btn btn-info">Random Quiz</button></span>!</h3>
 <table class="table">
   <thead>
     <tr>

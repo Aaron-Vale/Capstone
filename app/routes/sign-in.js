@@ -11,9 +11,10 @@ export default Ember.Route.extend({
 
   actions: {
     signIn (credentials) {
+      const email = credentials.email;
       return this.get('auth').signIn(credentials)
       .then(() => this.transitionTo('application'))
-      .then(() => this.get('flashMessages').success('Thanks for signing in!'))
+      .then(() => this.get('flashMessages').success(`Welcome, ${email}!`))
       .catch(() => {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');

@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       // if correct
       if (this.get('question').correct === this.get('answer')) {
         if (!this.get('isAnswered')) { // if not already answered
-          if (!Number(this.get('user').id) === Number(this.get('quizAuthor'))) {
+          if (Number(this.get('user').id) !== Number(this.get('quizAuthor'))) {
             let score = this.get('score');
             this.set('score', score + points);
             this.sendAction('updateScore', this.get('user'), this.get('score'));
@@ -27,7 +27,7 @@ export default Ember.Component.extend({
         }
       } else { // if incorrect
         if (!this.get('isAnswered')) {
-          if (!Number(this.get('user').id) === Number(this.get('quizAuthor'))) {
+          if (Number(this.get('user').id) !== Number(this.get('quizAuthor'))) {
             let score = this.get('score');
             this.set('score', score - points);
             this.sendAction('updateScore', this.get('user'), this.get('score'));
