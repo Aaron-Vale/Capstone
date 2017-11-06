@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
 
-import ENV from 'Capstone/config/environment';
+import ENV from 'quiz-whiz/config/environment';
 
 export default AjaxService.extend({
   host: ENV.apiHost,

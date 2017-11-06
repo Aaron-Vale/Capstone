@@ -1,4 +1,4 @@
-import ENV from 'Capstone/config/environment';
+import ENV from 'quiz-whiz/config/environment';
 import ActiveModelAdapter from 'active-model-adapter';
 
 import Ember from 'ember';

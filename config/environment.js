@@ -3,7 +3,7 @@
 module.exports = function (environment) {
   'use strict';
   var ENV = {
-    modulePrefix: 'Capstone',
+    modulePrefix: 'quiz-whiz',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -50,7 +50,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/Capstone';
+    ENV.rootURL = '/quiz-whiz';
     ENV.locationType = 'hash';
     ENV.apiHost = 'https://intense-harbor-78867.herokuapp.com/';
   }

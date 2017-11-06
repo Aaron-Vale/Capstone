@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import TextFieldInitializer from 'Capstone/initializers/text-field';
+import TextFieldInitializer from 'quiz-whiz/initializers/text-field';
 import { module, test } from 'qunit';
 
 let application;
