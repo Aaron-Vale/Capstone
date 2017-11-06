@@ -1,5 +1,5 @@
 <form {{action 'editQuiz' on='submit'}}>
-  {{input type="text" placeholder="New Quiz Title" value=newQuiz.title}}
-  {{input type="text" placeholder="New Category" value=newQuiz.category}}
+  {{input class="input-small" type="text" placeholder="New Quiz Title" value=newQuiz.title required=true}}
+  {{input class="input-small" type="text" placeholder="New Category" value=newQuiz.category required=true}}
   <button class="btn btn-success" type="submit">Update Quiz </button>
 </form>

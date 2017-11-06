@@ -15,30 +15,29 @@ export default Ember.Route.extend({
       const id = inputs.quiz_id;
       let newQuestion = this.get('store').createRecord('question', inputs);
       newQuestion.save()
-      .then(() => this.get('flashMessages').success('Question created!'))
       .then(() => this.transitionTo('quizzes'))
       .then(() => this.transitionTo('quiz', id))
+      .then(() => this.get('flashMessages').success('Question created!'))
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to create question. Please fill out all form fields.')
       )
     },
     editQuiz (newQuiz, quiz) {
+      const id = quiz.id
       quiz.set('title', newQuiz.title);
       quiz.set('category', newQuiz.category);
       quiz.save()
         .then(() => this.get('flashMessages').success('Quiz Updated!'))
-        // .then(() => this.modelFor('quizzes').reload())
         .catch(() => this.get('flashMessages')
-          .danger('Unable to create question. Please fill out all form fields.')
-      )
+          .danger('Unable to update quiz. Please fill out all form fields.')
+        )
+        .then(() => this.transitionTo('quizzes'))
+        .then(() => this.transitionTo('quiz', id))
     },
     updateScore (user, score) {
       user.set('score', score);
       user.save();
-    },
-    refreshRoute () {
-      this.refresh();
     }
   }
 });

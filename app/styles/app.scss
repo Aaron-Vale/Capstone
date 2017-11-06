@@ -29,6 +29,7 @@ body {
   background-image: url(https://av-wdi-20.s3.amazonaws.com/filebucket/2017-11-05/7424d6a59ca96db3f3dc5fc8ae99f363.png);
   background-size: cover;
   overflow-y: scroll;
+  padding-bottom:40px;
 }
 
 .centered {
@@ -91,6 +92,10 @@ table {
   background-color: rgba(0,0,0, 0.1);
 }
 
+.quizzes-table {
+  height: 470px;
+  overflow: auto;
+}
 .user-info {
   text-align: center;
 }
