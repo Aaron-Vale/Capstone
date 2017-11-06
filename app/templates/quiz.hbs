@@ -9,7 +9,7 @@
 {{/if}}
 
 {{#each model.quiz.questions as |question|}}
-  {{quiz-question updateScore="updateScore" user=model.user quizAuthor=model.quiz.user.id question=question}}
+  {{quiz-question logResponse="logResponse" updateScore="updateScore" question_response=model.question_response user=model.user quizAuthor=model.quiz.user.id question=question}}
   {{#if model.quiz.editable}}
     {{#link-to 'question' question.id}}Modify Question {{/link-to}}
   {{/if}}

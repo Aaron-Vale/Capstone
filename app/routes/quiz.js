@@ -7,7 +7,8 @@ export default Ember.Route.extend({
   model (params) {
     return Ember.RSVP.hash({
       quiz: this.get('store').findRecord('quiz', params.quiz_id),
-      user: this.get('store').findRecord('user', this.get('user_id'))
+      user: this.get('store').findRecord('user', this.get('user_id')),
+      question_response: this.get('store').findAll('question_response')
     });
   },
   actions: {
@@ -38,6 +39,14 @@ export default Ember.Route.extend({
     updateScore (user, score) {
       user.set('score', score);
       user.save();
+    },
+    logResponse (user_id, question_id) {
+      const response =  {
+          user_id: user_id,
+          question_id: question_id
+        }
+      let newResponse = this.get('store').createRecord('question_response', response);
+      newResponse.save()
     }
   }
 });
