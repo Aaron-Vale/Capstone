@@ -26,8 +26,7 @@ export default Ember.Component.extend({
         }
       }
       if (!answered) {
-        console.log('okay')
-        this.sendAction('logResponse', user_id, question_id)
+        this.sendAction('logResponse', user_id, question_id);
       }
       const points = this.get('question').points;
       // if correct

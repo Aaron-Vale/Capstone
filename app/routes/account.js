@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       user.save()
         .then(() => this.set('auth.credentials.username', credentials.username))
         .then(() => this.get('flashMessages').success('Username Updated!'))
-        .catch(() => this.get('flashMessages').danger('Username already exists. Please try again.'))
+        .catch(() => this.get('flashMessages').danger('Username already exists. Please try again.'));
     },
     updatePropic (credentials, user) {
       let propic = credentials.propic;
@@ -29,7 +29,7 @@ export default Ember.Route.extend({
       user.save()
         .then(() => this.set('auth.credentials.propic', propic))
         .then(() => this.get('flashMessages').success('Profile Image Updated!'))
-        .catch(() => this.get('flashMessages').danger('Unable to update image.'))
+        .catch(() => this.get('flashMessages').danger('Unable to update image.'));
     }
   }
 });

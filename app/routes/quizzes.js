@@ -14,7 +14,7 @@ export default Ember.Route.extend({
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to delete quiz. Please try again.')
-      )
+      );
     },
     randomQuiz () {
       let ids = [];

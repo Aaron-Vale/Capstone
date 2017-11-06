@@ -14,7 +14,7 @@ export default Ember.Route.extend({
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to delete question. Please fill out all form fields.')
-      )
+      );
     },
     editQuestion (newQuestion, question) {
       question.set('title', newQuestion.title);
@@ -29,7 +29,7 @@ export default Ember.Route.extend({
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to update question. Please fill out all form fields.')
-      )
+      );
 
     }
   }

@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to create quiz. Please fill out all form fields.')
-      )
+      );
 
     }
   }

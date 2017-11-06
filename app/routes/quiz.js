@@ -22,10 +22,10 @@ export default Ember.Route.extend({
       .catch(() =>
         this.get('flashMessages')
         .danger('Unable to create question. Please fill out all form fields.')
-      )
+      );
     },
     editQuiz (newQuiz, quiz) {
-      const id = quiz.id
+      const id = quiz.id;
       quiz.set('title', newQuiz.title);
       quiz.set('category', newQuiz.category);
       quiz.save()
@@ -34,7 +34,7 @@ export default Ember.Route.extend({
           .danger('Unable to update quiz. Please fill out all form fields.')
         )
         .then(() => this.transitionTo('quizzes'))
-        .then(() => this.transitionTo('quiz', id))
+        .then(() => this.transitionTo('quiz', id));
     },
     updateScore (user, score) {
       user.set('score', score);
@@ -44,9 +44,9 @@ export default Ember.Route.extend({
       const response =  {
           user_id: user_id,
           question_id: question_id
-        }
+        };
       let newResponse = this.get('store').createRecord('question_response', response);
-      newResponse.save()
+      newResponse.save();
     }
   }
 });
